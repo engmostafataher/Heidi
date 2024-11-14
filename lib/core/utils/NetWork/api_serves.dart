@@ -7,7 +7,7 @@ class ApiServes {
 
   ApiServes(this.dio);
    Future<Map<String,dynamic>> getAyah({required String endPoints}) async {
-    var response = await dio.get('$_baseUrl$endPoints');
+    Response response = await dio.get('$_baseUrl$endPoints');
     return response.data;
   }
 }

@@ -12,7 +12,7 @@ class AyahRepoImpe implements AyahRepo {
     try {
       List<Ayas> ayas = [];
       var data = await apiServes.getAyah(endPoints: 'quran/quran-uthmani');
-      for (var i in data['surahs']) {
+      for (var i in data['data']['surahs']) {
         ayas.add(Ayas.fromJson(i));
       }
       return right(ayas);
