@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => AllAyasCubitCubit(getIt.get<AyahRepoImpe>())..getAllAyas(),child: MaterialApp(
+        create: (context) => AllAyasCubitCubit(getIt.get<AyahRepoImpe>())..getAllAyas(),
+        child: MaterialApp(
           home: const SplashView(),debugShowCheckedModeBanner: false,
         ),);
   }
