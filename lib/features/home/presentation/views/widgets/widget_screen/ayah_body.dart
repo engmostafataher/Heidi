@@ -12,22 +12,72 @@ class AyahBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 3,left: 10,right: 10),
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 94, 85, 59),
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: ListTile(
-            leading: SizedBox(width: 50, height: 50, child: images),
-            trailing: Text('${nameAyah}',style: TextStyle(color: Colors.white,fontSize: 25),),
-            title: Container(
-                margin: EdgeInsets.only(right: 70),
-                child: Text(
-                  'اياتها\n${numberAyah}',style:TextStyle(color: Colors.white) ,
-                  textAlign: TextAlign.center,
-                ))),
+      child:Container(
+  margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+  decoration: BoxDecoration(
+    color:  const Color.fromARGB(255, 181, 166, 93), // لون خلفية مشابه
+    borderRadius: BorderRadius.circular(10),
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      // العمود الأول (رقم السورة والصورة)
+      Row(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8),
+            
+          ),
+          Container(
+            margin: const EdgeInsets.only(right: 15),
+            width: 50,
+            height: 50,
+            child: images, // الصورة (مثل الكعبة أو القبة)
+          ),
+        ],
       ),
+      const SizedBox(width: 30,),
+
+      // العمود الثاني (عدد الآيات)
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Text(
+            'آياتها',
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+            ),
+          ),
+          Text(
+            '$numberAyah', // عدد الآيات
+            style: const TextStyle(
+              fontSize: 14,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
+
+      // العمود الثالث (اسم السورة)
+      Expanded(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            '$nameAyah',
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+            textAlign: TextAlign.end,
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+
     );
   }
 }

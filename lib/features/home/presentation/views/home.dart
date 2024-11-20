@@ -1,11 +1,11 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hidaya/features/home/presentation/views/widgets/list_ayah_body.dart';
-import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/ayah2_body.dart';
+import 'package:hidaya/features/prayer/presentation/views/widgets/prayer_body.dart';
 import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/ayah3_body.dart';
 import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/ayah_body.dart';
 import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/home_body.dart';
-import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/setting_body.dart';
+import 'package:hidaya/features/profile/presentation/views/widgets/setting_body.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _tabIndex = 2;
+  int _tabIndex = 0;
 
   int get tabIndex => _tabIndex;
 
@@ -24,7 +24,12 @@ class _HomeState extends State<Home> {
     setState(() {});
   }
 
-  List<Widget> bodys = [const ListAyahBody(),const Ayah2Body(),const HomeBody(),const Ayah3Body(),const SettingBody()];
+  List<Widget> bodys = [
+    const HomeBody(),
+    const ListAyahBody(),
+    const PrayerBody(),
+    const SettingBody()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +37,15 @@ class _HomeState extends State<Home> {
       body: bodys[_tabIndex],
       bottomNavigationBar: CircleNavBar(
         activeIcons: const [
+          Icon(Icons.home, color: Colors.deepPurple),
           Icon(Icons.menu_book, color: Colors.deepPurple),
           Icon(Icons.mosque, color: Colors.deepPurple),
-          Icon(Icons.home, color: Colors.deepPurple),
-          Icon(Icons.person, color: Colors.deepPurple),
           Icon(Icons.settings, color: Colors.deepPurple),
         ],
         inactiveIcons: const [
+          Text("القائمه"),
           Text("قرأن"),
           Text("الصلاه"),
-          Text("القائمه"),
-          Text("حديث"),
           Text("الاعددات"),
         ],
         color: Colors.white,

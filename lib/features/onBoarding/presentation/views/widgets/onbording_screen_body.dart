@@ -41,7 +41,7 @@ class OnbordingScreenBody extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              'assets/images/cors1.jpg',
+              'assets/images/cn1.jpg',
               fit: BoxFit.fill,
               height: 360,
               width: 300,
@@ -51,7 +51,7 @@ class OnbordingScreenBody extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              'assets/images/cors3.png',
+              'assets/images/cn2.jpg',
               fit: BoxFit.fill,
               height: 360,
               width: 300,
@@ -60,7 +60,7 @@ class OnbordingScreenBody extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              'assets/images/cors4.png',
+              'assets/images/cn3.jpg',
               fit: BoxFit.fill,
               height: 360,
               width: 300,

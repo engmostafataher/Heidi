@@ -11,7 +11,7 @@ class TopDesign extends StatefulWidget {
 
 class _TopDesignState extends State<TopDesign> {
   late Timer _timer;
-  Duration _timeLeft = Duration(hours: 4, minutes: 11, seconds: 42);
+  Duration _timeLeft = const Duration(hours: 4, minutes: 11, seconds: 42);
 
   @override
   void initState() {
@@ -20,9 +20,9 @@ class _TopDesignState extends State<TopDesign> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       setState(() {
-        _timeLeft = _timeLeft - Duration(seconds: 1);
+        _timeLeft = _timeLeft - const Duration(seconds: 1);
       });
     });
   }
@@ -35,7 +35,7 @@ class _TopDesignState extends State<TopDesign> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       width: double.infinity,
       child: Stack(
@@ -48,10 +48,10 @@ class _TopDesignState extends State<TopDesign> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 40, left: 350),
+            margin: const EdgeInsets.only(top: 40, left: 350),
             child: IconButton(
-              icon: Icon(Icons.notifications_active),
-              color: Color.fromARGB(255, 248, 178, 2), // لون الجرس
+              icon: const Icon(Icons.notifications_active),
+              color: const Color.fromARGB(255, 248, 178, 2), // لون الجرس
               iconSize: 40, // حجم الأيقونة
               onPressed: () {
                 // أضف أي أكشن هنا عند النقر على الأيقونة
@@ -62,8 +62,8 @@ class _TopDesignState extends State<TopDesign> {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 130, left: 30),
-                child: Column(
+                margin: const EdgeInsets.only(top: 130, left: 30),
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Top Section with Date and Location
@@ -86,9 +86,9 @@ class _TopDesignState extends State<TopDesign> {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
-                margin: EdgeInsets.only(right: 20, top: 50),
+                margin: const EdgeInsets.only(right: 20, top: 50),
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
@@ -100,31 +100,31 @@ class _TopDesignState extends State<TopDesign> {
                             0.7, // Adjust this value to control the arc progress
                         strokeWidth: 8,
                         backgroundColor: Colors.grey[200],
-                        color: Color.fromARGB(255, 197, 151, 35),
+                        color: const Color.fromARGB(255, 197, 151, 35),
                       ),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'الفجر',
                           style: TextStyle(
                               fontSize: 22,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           'ص 04:39',
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
                           '-${_formatDuration(_timeLeft)}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
@@ -137,8 +137,8 @@ class _TopDesignState extends State<TopDesign> {
             ],
           ),
           Container(
-            margin: EdgeInsets.only(top: 260, left: 250),
-            child: Text(
+            margin: const EdgeInsets.only(top: 260, left: 250),
+            child: const Text(
               'الدقهليه.المنصوره',
               style: TextStyle(
                   color: Colors.white,

@@ -11,9 +11,9 @@ class Buildnavbutton extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Color(0xFFA86B33),
+            color: const Color(0xFFA86B33),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Icon(
@@ -21,35 +21,14 @@ class Buildnavbutton extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           label,
-          style: TextStyle(color: Color(0xFFA86B33)),
+          style: const TextStyle(color: Color(0xFFA86B33)),
         ),
       ],
     );
   }
 }
 
-// Widget buildNavButton(IconData icon, String label) {
-//   return Column(
-//     children: [
-//       Container(
-//         padding: EdgeInsets.all(16),
-//         decoration: BoxDecoration(
-//           color: Color(0xFFA86B33),
-//           borderRadius: BorderRadius.circular(16),
-//         ),
-//         child: Icon(
-//           icon,
-//           color: Colors.white,
-//         ),
-//       ),
-//       SizedBox(height: 8),
-//       Text(
-//         label,
-//         style: TextStyle(color: Color(0xFFA86B33)),
-//       ),
-//     ],
-//   );
-// }
+

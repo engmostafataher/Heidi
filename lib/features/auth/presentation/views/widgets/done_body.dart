@@ -19,8 +19,9 @@ class _DoneBodyState extends State<DoneBody> {
   }
 
   timer() {
-    Future.delayed(Duration(seconds: 4), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+    Future.delayed(const Duration(seconds: 4), () {
+      // ignore: use_build_context_synchronously
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
     });
   }
 
@@ -37,14 +38,14 @@ class _DoneBodyState extends State<DoneBody> {
             decoration: BoxDecoration(
                 color: Colors.brown[700],
                 borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
+                image: const DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage('assets/images/cors1.jpg'))),
+                    image: AssetImage('assets/images/cn3.jpg'))),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // النص العلوي
-          Text(
+          const Text(
             'تم ارسال طلبك',
             style: TextStyle(
               color: Color(0xFFA86B33),
@@ -53,10 +54,10 @@ class _DoneBodyState extends State<DoneBody> {
             ),
           ),
 
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           // النص السفلي
-          Text(
+          const Text(
             'يرجى الانتظار. \nسيقوم المسؤولون بتنسيقك مع أحد المحفظين',
             textAlign: TextAlign.center,
             style: TextStyle(

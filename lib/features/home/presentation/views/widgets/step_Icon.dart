@@ -4,7 +4,7 @@ class StepIcon extends StatelessWidget {
   final IconData icon;
   final bool isActive;
 
-  StepIcon({required this.icon, this.isActive = false});
+  const StepIcon({super.key, required this.icon, this.isActive = false});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,14 @@ class StepIcon extends StatelessWidget {
         CircleAvatar(
           radius: 12,
           backgroundColor: isActive
-              ? Color(0xFFA86B33)
+              ? const Color(0xFFA86B33)
               : const Color.fromARGB(255, 217, 205, 205),
           child: isActive
-              ? Icon(Icons.check, color: Colors.white, size: 16)
+              ? const Icon(Icons.
+              check, color: Colors.white, size: 16)
               : null,
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Icon(
           icon,
           color: Colors.black,

@@ -10,7 +10,7 @@ class HadithCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       elevation: 3,
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -22,13 +22,13 @@ class HadithCard extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.bookmark, color: Colors.brown),
+                      icon: const Icon(Icons.bookmark, color: Colors.brown),
                       onPressed: () {
                         // Add bookmark functionality
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.share, color: Colors.brown),
+                      icon: const Icon(Icons.share, color: Colors.brown),
                       onPressed: () {
                         // Add bookmark functionality
                       },
@@ -39,7 +39,7 @@ class HadithCard extends StatelessWidget {
                   children: [
                     Container(
                       alignment: Alignment.centerRight,
-                      child: Text(
+                      child: const Text(
                         'حديث اليوم',
                         style: TextStyle(
                           fontSize: 18,
@@ -49,16 +49,16 @@ class HadithCard extends StatelessWidget {
                         textAlign: TextAlign.right,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Icon(Icons.settings)
+                    const Icon(Icons.settings)
                   ],
                 )
               ],
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'قال رسول الله صلى الله عليه وسلم: "إن من أحبكم إليّ وأقربكم مني مجلسًا يوم القيامة أحاسنكم أخلاقًا"',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -66,7 +66,7 @@ class HadithCard extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
           ],
         ),
       ),

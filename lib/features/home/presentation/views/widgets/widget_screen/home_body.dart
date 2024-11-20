@@ -23,8 +23,8 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(slivers: [
-      SliverToBoxAdapter(child: TopDesign()),
-      SliverToBoxAdapter(
+      const SliverToBoxAdapter(child: TopDesign()),
+      const SliverToBoxAdapter(
         child: SizedBox(
           height: 20,
         ),
@@ -68,14 +68,14 @@ class _HomeBodyState extends State<HomeBody> {
           ),
         ),
       ),
-      SliverToBoxAdapter(child: SizedBox(height: 20)),
-      SliverToBoxAdapter(child: Buildnavigationbuttons()),
-      SliverToBoxAdapter(child: FollowUp()),
-      SliverToBoxAdapter(child: ListHadithCard()),
-      SliverToBoxAdapter(child: SizedBox(height: 15)),
-      SliverToBoxAdapter(
+      const SliverToBoxAdapter(child: SizedBox(height: 20)),
+      const SliverToBoxAdapter(child: Buildnavigationbuttons()),
+      const SliverToBoxAdapter(child: FollowUp()),
+      const SliverToBoxAdapter(child: ListHadithCard()),
+      const SliverToBoxAdapter(child: SizedBox(height: 15)),
+      const SliverToBoxAdapter(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -93,11 +93,11 @@ class _HomeBodyState extends State<HomeBody> {
           ],
         ),
       )),
-      SliverToBoxAdapter(child: SizedBox(height: 19)),
-      SliverToBoxAdapter(
+      const SliverToBoxAdapter(child: SizedBox(height: 19)),
+      const SliverToBoxAdapter(
         child: ListProfileCard(),
       ),
-      SliverToBoxAdapter(child: SizedBox(height: 25)),
+      const SliverToBoxAdapter(child: SizedBox(height: 25)),
     ]);
   }
 }

@@ -7,7 +7,7 @@ class Ayah3Body
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Ayah 3'),
     );
   }

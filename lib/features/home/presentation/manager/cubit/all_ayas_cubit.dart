@@ -12,12 +12,9 @@ class AllAyasCubitCubit extends Cubit<AllAyasState> {
     emit(AllAyasLoading());
     var values = await ayahRepoImpe.featchAllAyah();
     values.fold((error) {
-      
       emit(AllAyasError(error));
-      print(error.toString());
     }, (ayas) {
       emit(AllAyasLoaddid(ayas));
-      print(ayas.toString());
     });
   }
 }

@@ -20,11 +20,11 @@ class VerificationCodeBody extends StatelessWidget {
               alignment: Alignment.topLeft,
               child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.arrow_back, color: Colors.black))),
+                  icon: const Icon(Icons.arrow_back, color: Colors.black))),
           SizedBox(height: height(context) * .04),
           Container(
             alignment: Alignment.centerRight,
-            child: Text(
+            child: const Text(
               'رمز التحقق',
               style: TextStyle(
                 fontSize: 24,
@@ -50,23 +50,12 @@ class VerificationCodeBody extends StatelessWidget {
             numberOfFields: 6,
             enabledBorderColor: Colors.black,
             borderRadius: BorderRadius.circular(10),
-            // borderColor: Colors.red,
-            // disabledBorderColor: Colors.red,
-            focusedBorderColor: Color(0xFFA86B33),
-            disabledBorderColor: Color(0xFFA86B33),
-            borderColor: Color(0xFFA86B33),
-
-            //        Color disabledBorderColor = const Color(),
-            // Color enabledBorderColor = const Color(),
-            // Color borderColor = const Color(),
-            // Color focusedBorderColor = const Color(),
-            //set to true to show as box or false to show as dash
+            focusedBorderColor: const Color(0xFFA86B33),
+            disabledBorderColor: const Color(0xFFA86B33),
+            borderColor: const Color(0xFFA86B33),
             showFieldAsBox: true,
-            //runs when a code is typed in
             onCodeChanged: (String code) {
-              //handle validation or checks here
             },
-            //runs when every textfield is filled
             onSubmit: (String verificationCode) {
               showDialog(
                   context: context,
@@ -76,7 +65,7 @@ class VerificationCodeBody extends StatelessWidget {
                         alignment: Alignment.topCenter,
                         width: 200,
                         height: 220,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage('assets/images/cors1.jpg'),
@@ -86,14 +75,14 @@ class VerificationCodeBody extends StatelessWidget {
                             alignment: Alignment.bottomCenter,
                             width: double.infinity,
                             height: double.infinity,
-                            child: Text(
+                            child: const Text(
                               'تم بنجاح',
                               style: TextStyle(fontSize: 28),
                             )),
                       ),
                       content: Container(
-                          margin: EdgeInsets.only(left: 25, bottom: 5),
-                          child: Text(
+                          margin: const EdgeInsets.only(left: 25, bottom: 5),
+                          child: const Text(
                             'لقد تم تعيين كلمة المرور الخاصه\n بك بنجاح ',
                             style: TextStyle(color: Colors.grey),
                             textAlign: TextAlign.center,
@@ -114,14 +103,14 @@ class VerificationCodeBody extends StatelessWidget {
           CustomButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Done()));
+                  context, MaterialPageRoute(builder: (context) => const Done()));
             },
             text: 'تحقق',
           ),
           SizedBox(height: height(context) * .05),
           InkWell(
             onTap: () {},
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(

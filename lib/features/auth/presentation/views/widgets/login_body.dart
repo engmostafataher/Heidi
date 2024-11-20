@@ -4,6 +4,7 @@ import 'package:hidaya/core/utils/widgets/custom_button.dart';
 import 'package:hidaya/core/utils/widgets/custom_text_filed.dart';
 import 'package:hidaya/features/auth/presentation/views/widgets/information_create_account.dart';
 import 'package:hidaya/features/auth/presentation/views/widgets/information_login.dart';
+import 'package:hidaya/features/home/presentation/views/home.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -19,116 +20,120 @@ class _LoginBodyState extends State<LoginBody> {
   bool isChanck = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(24.0),
-      child: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'أولي العزم',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.brown,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text(
+                  'هدايه',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.brown,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 8),
-              Text(
-                'قم بتسجيل الدخول أو إنشاء حساب جديد\nلحفظ تقدمك',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[600],
+                const SizedBox(height: 8),
+                Text(
+                  'قم بتسجيل الدخول أو إنشاء حساب جديد\nلحفظ تقدمك',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey[600],
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 24),
-              Center(
-                child: ToggleButtons(
-                  isSelected: [true, false],
-                  onPressed: (index) {
-                    setState(() {
-                      isChanck = !isChanck;
-                      isValue = index;
-                      if (index == 0) {
-                        InformationLogin();
-                      } else {
-                        InformationCreateAccount();
-                      }
-                    });
-                  },
-                  borderRadius: BorderRadius.circular(20),
+                const SizedBox(height: 24),
+                Center(
+                  child: ToggleButtons(
+                    isSelected: const [true, false],
+                    onPressed: (index) {
+                      setState(() {
+                        isChanck = !isChanck;
+                        isValue = index;
+                        if (index == 0) {
+                          const InformationLogin();
+                        } else {
+                          const InformationCreateAccount();
+                        }
+                      });
+                    },
+                    borderRadius: BorderRadius.circular(20),
+                    selectedColor: isChanck ? Colors.black : Colors.brown,
+                    fillColor: isChanck ? Colors.white : Colors.brown[50],
+                    children:  const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        child: Text(
+                          'تسجيل الدخول',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        child: Text(
+                          'إنشاء حساب',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 32),
-                      child: Text(
-                        'تسجيل الدخول',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                    if (isValue == 0)  const InformationLogin(),
+                    if (isValue == 1)  const InformationCreateAccount(),
+                  ],
+                ),
+                CustomButton(
+                  onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>const Home() ));
+                  },
+                  text: 'تسجيل الدخول',
+                ),
+                 const SizedBox(height: 24),
+                 const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('خيارات تسجيل الدخول الأخرى'),
+                  ],
+                ),
+                 const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: IconButton(
+                        onPressed: () {},
+                        icon:  const Icon(Icons.g_mobiledata),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 32),
-                      child: Text(
-                        'إنشاء حساب',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                     const SizedBox(width: 20),
+                    // Icon for Google
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: IconButton(
+                        onPressed: () {},
+                        icon:  const Icon(Icons.facebook),
                       ),
+                    ),
+
+                     const SizedBox(width: 20),
+                    // Icon for Apple
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: IconButton(
+                          onPressed: () {},
+                          icon:  const Icon(Icons.apple, color: Colors.black)),
                     ),
                   ],
-                  selectedColor: isChanck ? Colors.black : Colors.brown,
-                  fillColor: isChanck ? Colors.white : Colors.brown[50],
                 ),
-              ),
-              Column(
-                children: [
-                  if (isValue == 0) InformationLogin(),
-                  if (isValue == 1) InformationCreateAccount(),
-                ],
-              ),
-              CustomButton(
-                onPressed: () {},
-                text: 'تسجيل الدخول',
-              ),
-              SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('خيارات تسجيل الدخول الأخرى'),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.g_mobiledata),
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  // Icon for Google
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.facebook),
-                    ),
-                  ),
-
-                  SizedBox(width: 20),
-                  // Icon for Apple
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.apple, color: Colors.black)),
-                  ),
-                ],
-              ),
-            ]),
+              ]),
+        ),
       ),
     );
   }

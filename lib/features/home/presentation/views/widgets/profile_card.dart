@@ -18,7 +18,7 @@ class ProfileCard extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.3),
                 spreadRadius: 5,
                 blurRadius: 10,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),
@@ -27,14 +27,14 @@ class ProfileCard extends StatelessWidget {
             children: [
               // Top Image Section
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
                 child: Container(
                   color: Colors.brown,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage(
@@ -43,35 +43,35 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
 
               // Name and Title
               Container(
-                margin: EdgeInsets.only(right: 10),
+                margin: const EdgeInsets.only(right: 10),
                 alignment: Alignment.centerRight,
-                child: Text(
+                child: const Text(
                   'محمد طاهر',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.right,
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 10),
+                margin: const EdgeInsets.only(right: 10),
                 alignment: Alignment.centerRight,
-                child: Text(
+                child: const Text(
                   'حفظ',
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
 
               // Reviews and Rating
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 10),
-                    child: Row(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 20),
@@ -84,12 +84,12 @@ class ProfileCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
 
                   // Reviews Text
                   Container(
-                    margin: EdgeInsets.only(right: 10),
-                    child: Text(
+                    margin: const EdgeInsets.only(right: 10),
+                    child: const Text(
                       'المراجعات',
                       style: TextStyle(
                         color: Colors.blue,
@@ -100,7 +100,7 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
             ],
           ),
         ),

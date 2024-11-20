@@ -29,6 +29,7 @@ class CustomTextFiled extends StatelessWidget {
         onSaved: onSaved,
         decoration: InputDecoration(
             hintText: hintText,
+            hintStyle: TextStyle(color: Colors.grey),
             suffixIcon: suffexIcon,
             prefixIcon: prefixIcon,
             filled: true,

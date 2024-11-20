@@ -11,6 +11,8 @@ class InformationCreateAccount extends StatefulWidget {
 
 class _InformationCreateAccountState extends State<InformationCreateAccount> {
   bool _isChecked = false;
+  bool isPasswordVisible1 = false;
+  bool isPasswordVisible2 = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +28,7 @@ class _InformationCreateAccountState extends State<InformationCreateAccount> {
         CustomTextFiled(
           inputType: TextInputType.emailAddress,
           hintText: 'ادخل بريدك الإلكتروني',
-          obscureText: true,
+          obscureText: false,
         ),
         Container(
             margin: EdgeInsets.only(right: 20),
@@ -38,8 +40,17 @@ class _InformationCreateAccountState extends State<InformationCreateAccount> {
             )),
         CustomTextFiled(
           inputType: TextInputType.visiblePassword,
-          obscureText: true,
+          obscureText: isPasswordVisible1,
           hintText: 'ادخل كلمة المرور',
+          prefixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  isPasswordVisible1 = !isPasswordVisible1;
+                });
+              },
+              icon: isPasswordVisible1
+                  ? Icon(Icons.visibility)
+                  : Icon(Icons.visibility_off_rounded)),
         ),
         Container(
             margin: EdgeInsets.only(right: 20),
@@ -51,8 +62,17 @@ class _InformationCreateAccountState extends State<InformationCreateAccount> {
             )),
         CustomTextFiled(
           inputType: TextInputType.visiblePassword,
-          obscureText: true,
+          obscureText: isPasswordVisible2,
           hintText: 'ادخل كلمة المرور',
+          prefixIcon: IconButton(
+              onPressed: () {
+                setState(() {
+                  isPasswordVisible2 = !isPasswordVisible2;
+                });
+              },
+              icon: isPasswordVisible2
+                  ? Icon(Icons.visibility)
+                  : Icon(Icons.visibility_off_rounded)),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

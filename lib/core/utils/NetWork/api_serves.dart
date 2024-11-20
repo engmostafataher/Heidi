@@ -1,13 +1,20 @@
 import 'package:dio/dio.dart';
-import 'package:hidaya/features/home/data/models/ayas/ayah.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class ApiServes {
-  final _baseUrl = 'https://api.alquran.cloud/v1/';
   final Dio dio;
-
+  
   ApiServes(this.dio);
-   Future<Map<String,dynamic>> getAyah({required String endPoints}) async {
-    Response response = await dio.get('$_baseUrl$endPoints');
+   Future<Map<String,dynamic>> getAyah({required String baseUrl, required String endPoints}) async {
+    Response response = await dio.get('$baseUrl$endPoints');
+    dio.interceptors.add(
+      PrettyDioLogger(
+        requestBody: true,
+        requestHeader: true,
+        responseBody: true,
+        responseHeader: true,)
+    );
     return response.data;
   }
+
 }

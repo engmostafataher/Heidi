@@ -11,7 +11,7 @@ class ListHadithCard extends StatelessWidget {
       height: 600,
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HadithCard();
+          return const HadithCard();
         },
         itemCount: 5,
       ),

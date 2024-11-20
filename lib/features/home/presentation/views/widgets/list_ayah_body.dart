@@ -5,6 +5,7 @@ import 'package:hidaya/features/home/presentation/views/widgets/widget_screen/ay
 
 class ListAyahBody extends StatelessWidget {
   const ListAyahBody({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,20 @@ class ListAyahBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return AyahBody(
                 images: Image.asset(
-                  'assets/images/cors3.png',
+                  state.ayas[index].revelationType == 'Meccan'
+                      ? 'assets/images/ca4.jpg'
+                      : 'assets/images/ca6.jpg',
                   fit: BoxFit.fill,
                 ),
                 nameAyah: '${state.ayas[index].name}',
-                numberAyah: '${state.ayas[index].ayahs!.length}',
-                onPressed: () {},
+                numberAyah: '${state.ayas[index].ayahs?.length ?? 0}',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/details_ayas', arguments: 
+                    state.ayas[index],
+                    
+
+                  );
+                },
               );
             },
             itemCount: state.ayas.length,
@@ -31,9 +40,8 @@ class ListAyahBody extends StatelessWidget {
         );
       } else if (state is AllAyasError) {
         return Center(child: Text(state.toString()));
-      }
-      else {
-        return Center(child: CircularProgressIndicator());
+      } else {
+        return const Center(child: CircularProgressIndicator());
       }
     });
   }
